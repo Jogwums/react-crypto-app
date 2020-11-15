@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import axios from 'axios'
 import Coin from './Coin'
 
@@ -20,9 +20,6 @@ function  CryptoCurrency() {
         setSearch(e.target.value)
     }
 
-    const handleSubmit = () => {
-
-    }
 
     const filteredCrypto = crypto.filter(item => 
         item.name.toLowerCase().includes(search.toLowerCase()))
