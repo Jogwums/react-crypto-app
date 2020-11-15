@@ -11,7 +11,7 @@ const Coin = ({ name, price, symbol, volume, image, priceChange, marketcap }) =>
                 </div>
                 <div className="coin-data">
                     <p className="coin-price">
-                        Price:
+                        Price:<br ></br>
                     {`\u20A6`}{price}
                     </p>
                     <p className="coin-volume">
