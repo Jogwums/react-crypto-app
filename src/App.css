@@ -3,7 +3,7 @@
 }
 
 body{
-  width: 85%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -12,6 +12,7 @@ body{
 
 .App{
   /* display: flex; */
+  width: 100%;
   align-items: center;
   justify-content: center;
   background-color: rgb(139, 88, 105);
@@ -154,5 +155,23 @@ h1,h2,h3,h4,h5,h6{
   }
   .coin-marketcap{
     display: flex;
+  }
+
+}
+
+@media (max-width: 320px){
+  body, .App{
+    width: 100%;
+    margin: .2rem;
+    padding: .15rem;
+  }
+  .coin-data{
+    padding: 0 .2rem;
+    margin: 0;
+    width: 100%;
+  }
+  .coin-price, .coin-percent, .coin-volume{
+    margin: 0;
+    padding: 0 .2rem;
   }
 }
