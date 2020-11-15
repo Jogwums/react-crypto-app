@@ -162,12 +162,12 @@ h1,h2,h3,h4,h5,h6{
 @media (max-width: 320px){
   body, .App{
     width: 100%;
-    margin: .2rem;
+    margin: 0;
     padding: .15rem;
   }
   .coin-data{
     padding: 0 .2rem;
-    margin: 0;
+    margin: .5rem 0;
     width: 100%;
   }
   .coin-price, .coin-percent, .coin-volume{
