@@ -31,7 +31,7 @@ const Coin = ({ name, price, symbol, volume, image, priceChange, marketcap }) =>
                     )}
                     </p>
                     <p className="coin-marketcap">
-                        Mkt Cap: {`\u20A6`}{marketcap}
+                        Mkt Cap:<br ></br> {`\u20A6`}{marketcap}
                     </p>
                 </div>
             </div>
