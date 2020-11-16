@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import Coin from './Coin'
 
-
+import img from './img/loading-arrow.gif'
 
 // API_URL_ngn = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=ngn&order=market_cap_desc&per_page=100&page=1&sparkline=false';
 //API_URL_usd = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false';
@@ -19,7 +19,7 @@ function  CryptoCurrency() {
         axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=ngn&order=market_cap_desc&per_page=100&page=1&sparkline=false')
         .then(res => setCrypto(res.data))
         .catch(error => console.log(error))
-        .then(() => setLoading(false))
+        .then(() => setLoading(false)) //loader is no longer needed
 
     }, [])
         
@@ -32,7 +32,12 @@ function  CryptoCurrency() {
     const filteredCrypto = crypto.filter(item => 
         item.name.trim().toLowerCase().includes(search.toLowerCase()))
 
-
+        if (loading) {
+            return <h2 className="coin-container">
+              <img style={{maxWidth:"5em"}} src={img} alt="loading" />
+            </h2>;
+          } //correct location for a loader after data is fetched & before children are rendered 
+          
         return (
             <>
                 <div className="container">
