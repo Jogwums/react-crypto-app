@@ -4,14 +4,9 @@ import img from './img/loading-arrow.gif'
 
 const Coin = ({ name, price, symbol, volume, image, priceChange, marketcap, loading }) => {
 
-    if(!loading){
-        return (<div>
-            <img src={img} alt="loader" />
-        </div>
-        )
-    }
-
-    return (
+    return (loading) ? <div className="coin-container">
+                         <img src={img} alt="loader" />
+                    </div> : ( 
         <div className="coin-container">
             <div className="coin-row">
                 <div className="coin">
