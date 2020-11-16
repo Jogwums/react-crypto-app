@@ -8,8 +8,10 @@ import Coin from './Coin'
 function  CryptoCurrency() {
     const [crypto, setCrypto] = React.useState([])
     const [search, setSearch] = React.useState('')
+    // const [loading, setLoading] = React.useState(false)
     
-    
+
+    // setLoading(true);
     React.useEffect(() => { 
         axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=ngn&order=market_cap_desc&per_page=100&page=1&sparkline=false')
         .then(res => setCrypto(res.data))
@@ -20,6 +22,7 @@ function  CryptoCurrency() {
         setSearch(e.target.value)
     }
 
+    const handleSubmit = (e) => {e.preventDefault();}
 
     const filteredCrypto = crypto.filter(item => 
         item.name.toLowerCase().includes(search.toLowerCase()))
@@ -32,7 +35,7 @@ function  CryptoCurrency() {
                         <h1 className="coin-text">
                             Crypto World 
                         </h1>
-                        <form action="" 
+                        <form action="" onSubmit={handleSubmit}
                               className="search-form">
                                   <input type="text" placeholder="Search" 
                                   className="coin-input" onChange={handleChange}/>
@@ -48,14 +51,7 @@ function  CryptoCurrency() {
                     )
                 })}
 
-                {/* {crypto.map(item => (
-                    <>
-                        <div className="table">
-                            <h1>Coin: {item.name}</h1>
-                            <p>Price: {`\u20A6`}{item.current_price}</p>
-                        </div>
-                    </>
-                ))} */}
+               
             </>
         )
     }
