@@ -19,13 +19,13 @@ function  CryptoCurrency() {
     }, [])
         
     const handleChange = (e) => {
-        setSearch(e.target.value)
+        setSearch(e.target.value.trim()) //ensure spaces do not affect entry 
     }
 
     const handleSubmit = (e) => {e.preventDefault();}
 
     const filteredCrypto = crypto.filter(item => 
-        item.name.toLowerCase().includes(search.toLowerCase()))
+        item.name.trim().toLowerCase().includes(search.toLowerCase()))
 
 
         return (
@@ -50,8 +50,6 @@ function  CryptoCurrency() {
                         volume={item.total_volume} />
                     )
                 })}
-
-               
             </>
         )
     }
