@@ -1,9 +1,15 @@
 import React from 'react'
 
-const Coin = ({ name, price, symbol, volume, image, priceChange, marketcap }) => {
-    
+import img from './img/loading-arrow.gif'
 
+const Coin = ({ name, price, symbol, volume, image, priceChange, marketcap, loading }) => {
 
+    if(!loading){
+        return (<div>
+            <img src={img} alt="loader" />
+        </div>
+        )
+    }
 
     return (
         <div className="coin-container">
