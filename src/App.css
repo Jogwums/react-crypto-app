@@ -1,32 +1,26 @@
 *,*::after, *::before{
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
-
-body{
-  width: 90%;
-  margin: 0 auto;
-}
-
 
 /* styling for crypocurrency app */
 
 .App{
-  /* display: flex; */
-  width: 100%;
+  margin: 0 auto;
+  width: 85%;
   align-items: center;
   justify-content: center;
-  background-color: rgb(139, 88, 105);
+  background-color: rgb(84, 26, 92);
   color: azure;
 }
 h1,h2,h3,h4,h5,h6{
-  font-size: smaller;
+  font-size:10vw;
 }
 
 .container{
   display: flex;
   flex-direction: column;
-  padding: 1rem 2rem;
-
+  padding: 1rem;
 }
 .coin-container{
   display: flex;
@@ -39,15 +33,16 @@ h1,h2,h3,h4,h5,h6{
   justify-items: start;
   align-items: center;
   width: 100%;
-  border-bottom: 1px solid #ffffff;
+  border: 1px solid #ffffff;
+  box-shadow: 2px 4px 6px #fff;
   padding: .3rem;
 }
-
+/* coin */
 .coin{
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: .2rem 1rem;
+  padding: .2rem;
   width: 100%;
   background-color: #c97c7c;
   box-shadow: 2px 4px 6px  #e2b8b8;
@@ -67,7 +62,8 @@ h1,h2,h3,h4,h5,h6{
   padding: .3rem;
   display: none;
 }
-
+/* coin  */
+/* coin data */
 .coin-data{
   display: flex;
   align-items: center;
@@ -79,7 +75,7 @@ h1,h2,h3,h4,h5,h6{
 
 .coin-price{
   /* width: 10rem; */
-  margin: 0 1rem;
+  /* margin: 0 1rem; */
   padding: 0;
 }
 
@@ -138,7 +134,7 @@ h1,h2,h3,h4,h5,h6{
   color: #e2e2e2;
 }
 
-@media (min-width: 600px){
+@media (min-width: 430px){
   .App{
     background-color: #dbcaca;
     color: #000;
@@ -176,12 +172,12 @@ h1,h2,h3,h4,h5,h6{
     padding: 0 1rem;
   }
   .coin-marketcap{
-    display: flex;
+    display: block;
   }
 
 
 }
-
+/* 
 @media (max-width: 420px){
   body, .App{
     width: 100%;
@@ -198,4 +194,4 @@ h1,h2,h3,h4,h5,h6{
     padding: 0 .2rem;
   }
 
-}
+} */

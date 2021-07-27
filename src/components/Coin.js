@@ -16,7 +16,9 @@ const Coin = ({ name, price, symbol, volume, image, priceChange, marketcap }) =>
                 <div className="coin-data">
                     <p className="coin-price">
                         Price:<br ></br>
-                    {`\u20A6`}{price}
+                    {price.toLocaleString('en-NG', {
+                                            style: 'currency',
+                                            currency: 'NGN',})}
                     </p>
                     <p className="coin-volume">
                         Volume:<br ></br>
@@ -26,7 +28,7 @@ const Coin = ({ name, price, symbol, volume, image, priceChange, marketcap }) =>
                         Variation: 
                     {priceChange <= 0 ? (
                         <p className="coin-percent red">
-                            {priceChange}%
+                            {priceChange.toLocaleString()}%
                         </p>
                     ): (
                         <p className="coin-percent green">
