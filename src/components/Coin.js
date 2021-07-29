@@ -22,7 +22,7 @@ const Coin = ({ name, price, symbol, volume, image, priceChange, marketcap }) =>
                     </p>
                     <p className="coin-volume">
                         Volume:<br ></br>
-                        {volume.toLocaleString()}
+                        {volume.toLocaleString('volume')}
                     </p>
                     <p>
                         Variation: 
@@ -37,7 +37,9 @@ const Coin = ({ name, price, symbol, volume, image, priceChange, marketcap }) =>
                     )}
                     </p>
                     <p className="coin-marketcap">
-                        Mkt Cap:<br ></br> {`\u20A6`}{marketcap}
+                        Mkt Cap:<br ></br>{marketcap.toLocaleString('en-NG', {
+                                            style: 'currency',
+                                            currency: 'NGN',})}
                     </p>
                 </div>
             </div>
