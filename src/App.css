@@ -163,15 +163,17 @@ h1,h2,h3,h4,h5,h6{
   }
   .coin-row{
     display: grid;
-    grid-template-columns: 2fr 4fr;
+    grid-template-columns: 1fr 4fr;
     margin: 0;
     padding: 0 1rem;
+    box-shadow: unset;
   }
   .coin{
-    box-shadow: none;
+    box-shadow: 2px 4px var(--bg-dark-2);
     margin: 0;
-    padding: 0;
+    padding: .2rem;
     justify-content: flex-start;
+    border-radius: .2rem;
   }
   
   .coin-data{
