@@ -11,6 +11,7 @@ function  CryptoCurrency() {
     const [crypto, setCrypto] = React.useState([])
     const [search, setSearch] = React.useState('')
     const [loading, setLoading] = React.useState(false)
+    const [date, setDate] = React.useState(new Date().toLocaleString())
     
 
     // setLoading(true);
@@ -29,6 +30,10 @@ function  CryptoCurrency() {
 
     const handleSubmit = (e) => {e.preventDefault();}
 
+    const getDate = () => {
+        let date = new Date()
+        setDate(date.getHour())
+    } 
     const filteredCrypto = crypto.filter(item => 
         item.name.trim().toLowerCase().includes(search.toLowerCase()))
 
@@ -43,8 +48,9 @@ function  CryptoCurrency() {
                 <div className="container">
                     <div className="search-container">
                         <h1 className="coin-text">
-                            Crypto World 
+                            Crypto Stats 
                         </h1>
+                        <small className="date">{date}</small>
                         <form action="" onSubmit={handleSubmit}
                               className="search-form">
                                   <input type="text" placeholder="Search" 

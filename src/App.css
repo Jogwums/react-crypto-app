@@ -2,7 +2,13 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
-
+:root{
+  --bg-dark-1: #022534;
+  --bg-dark-2: #094f6e;
+  --bg-dark-3: #2d7a9c;
+  --bg-light-1: #96c7d5;
+  --bg-light-2: #e4f5ff;
+}
 /* styling for crypocurrency app */
 
 .App{
@@ -10,8 +16,8 @@
   width: 85%;
   align-items: center;
   justify-content: center;
-  background-color: rgb(84, 26, 92);
-  color: azure;
+  background-color: var(--bg-light-2);
+  color: var(--bg-dark-1);
 }
 h1,h2,h3,h4,h5,h6{
   font-size:10vw;
@@ -39,6 +45,7 @@ h1,h2,h3,h4,h5,h6{
 }
 /* coin */
 .coin{
+  color: var(--bg-light-2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,8 +53,8 @@ h1,h2,h3,h4,h5,h6{
   margin-right: 1rem;
   padding: .2rem;
   width: 100%;
-  background-color: #c97c7c;
-  box-shadow: 2px 4px 6px  #e2b8b8;
+  background-color: var(--bg-dark-2);
+  box-shadow: 2px 4px 6px  var(--bg-dark-1);
 }
 
 .coin h2{
@@ -124,22 +131,28 @@ h1,h2,h3,h4,h5,h6{
   border: 0;
   border-radius: .5rem;
   outline: 2px #f00606;
-  background: linear-gradient(
+  /* background: linear-gradient(
     -225deg,
     #ac32e4 0%,
     #7918f2 48%,
     #4801ff 100%
+  ); */
+  background: linear-gradient(
+    -225deg,
+    var(--bg-dark-3) 0%,
+    var(--bg-dark-2) 48%,
+    var(--bg-dark-1) 100%
   );
   color: #fff;
 }
 .coin-input::placeholder{
-  color: #e2e2e2;
+  color: var(--bg-light-2);
 }
 
 @media (min-width: 430px){
   .App{
-    background-color: #dbcaca;
-    color: #000;
+    background-color: var(--bg-dark-3);
+    color: var(--bg-light-2);
     font-weight: bold;
   }
   h1,h2,h3,h4,h5,h6{
@@ -155,7 +168,6 @@ h1,h2,h3,h4,h5,h6{
     padding: 0 1rem;
   }
   .coin{
-    background-color: #dbcaca;
     box-shadow: none;
     margin: 0;
     padding: 0;
@@ -167,11 +179,9 @@ h1,h2,h3,h4,h5,h6{
     justify-content: space-between;
   }
   .coin-symbol{
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin: 0;
-    padding: 0 1rem;
+    font-size: larger;
+    display: inline-block;
+    letter-spacing: .1rem;
   }
   .coin-marketcap{
     display: block;
