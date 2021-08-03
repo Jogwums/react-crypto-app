@@ -11,7 +11,7 @@ function  CryptoCurrency() {
     const [crypto, setCrypto] = React.useState([])
     const [search, setSearch] = React.useState('')
     const [loading, setLoading] = React.useState(false)
-    const [date, setDate] = React.useState(new Date().toLocaleString())
+    const [date] = React.useState(new Date().toLocaleString())
     
 
     // setLoading(true);
@@ -29,11 +29,7 @@ function  CryptoCurrency() {
     }
 
     const handleSubmit = (e) => {e.preventDefault();}
-
-    const getDate = () => {
-        let date = new Date()
-        setDate(date.getHour())
-    } 
+ 
     const filteredCrypto = crypto.filter(item => 
         item.name.trim().toLowerCase().includes(search.toLowerCase()))
 
